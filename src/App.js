@@ -5,7 +5,7 @@ import Carousel from './components/Carousel';
 //import Footer from './components/Footer';
 function App() {
   return (
-    <div style={{background: "#141424"}}>
+    <div style={{background: "#141414"}}>
       <Menu/>
       
       <BannerMain
