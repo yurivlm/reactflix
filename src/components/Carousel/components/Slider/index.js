@@ -2,6 +2,23 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
+//import dadosIniciais from '../../../../data/dados_iniciais.json';
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block" }}
+      onClick={onClick}
+    />
+  );
+}
+
+// Tentativa de mudar a cor baseado no Json
+//const corseta=dadosIniciais.categorias[2].cor;
+//console.log(corseta);
+
 
 const Container = styled.ul`
   padding: 0;
@@ -17,6 +34,7 @@ const Container = styled.ul`
     transform: initial;
     &:before {
       font-size: 30px;
+      color: blue;
     }
   }
   
@@ -43,11 +61,13 @@ const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 300,
       centerMode: false,
       variableWidth: true,
       adaptiveHeight: true,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SampleNextArrow />
     }}
     >
       {children}
